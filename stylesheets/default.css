@@ -1,0 +1,42 @@
+header {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.header-list {
+  padding: 0%;
+}
+
+.header-list li {
+  display: inline-block;
+  padding-right: 6%;
+  padding-left: 6%
+}
+
+section {
+  margin: 7% 8% 10% 17%;
+  text-align: center;
+  width: 63.2022472%;
+}
+
+.photo-self {
+  width: 28.1111111%;
+  height: auto;
+}
+
+footer {
+/*  position: fixed;*/
+  bottom: 0;
+  text-align: center;
+}
+
+.footer-list {
+  padding: 0%;
+}
+
+.footer-list li {
+  display: inline-block;
+  padding-right: 6%;
+  padding-left: 6%;
+  text-decoration: none;
+}
