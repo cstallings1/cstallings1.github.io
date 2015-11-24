@@ -29,3 +29,20 @@ aside {
 .photo-self {
   width: 55%;
 }
+
+.blog-post {
+  margin: 7%;
+  font-size: 0.75em;
+}
+
+.blog-title {
+font-weight: bold;
+font-family: 'Crimson Text', serif;
+font-size: 2em;
+}
+
+.blog-subtitle{
+font-size: 1.25em;
+font-family: 'Crimson Text', serif;
+}
+
