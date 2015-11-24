@@ -1,0 +1,31 @@
+
+section {
+  margin-left: 10%;
+  text-align: center;
+}
+
+section h1 {
+  font-size: 3em;
+}
+
+.blog-title {
+  display: inline;
+  padding-right: 18%;
+  text-align: left;
+}
+
+.date {
+  display: inline;
+}
+
+aside {
+  float: right;
+  padding-top: 11%;
+  padding-right: 5%;
+  width: 15%;
+  text-align: center;
+}
+
+.photo-self {
+  width: 55%;
+}
