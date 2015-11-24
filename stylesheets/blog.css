@@ -31,7 +31,9 @@ aside {
 }
 
 .blog-post {
-  margin: 7%;
+  float: left;
+  width: 65%;
+  margin: 7% 0% 7% 7%;
   font-size: 0.75em;
 }
 
