@@ -22,38 +22,42 @@
       </nav>
       <div class="horizontal-bar"></div>
     </header>
-    <article class="blog-post">
-      <h1 class="blog-title">Benefits of Version Control</h1>
-      <h2 class="blog-subtitle">How Git and GitHub work together to make your life easier</h2>
-      <h3 class="blog-subtitle">November 11, 2015</h3>
-        <p>
-        Hello and welcome to my first blog post in Dev Bootcamp! Today I'm taking a look at the benefits of version control and how using Git and GitHub work together to make collaborating on a project easier and more effective.
-        </p>
-        <p>
-        First off - what is version control and why is it so important? Version control is simply saving your project every time you make changes so that you end up with multiple versions of a project. This is helpful if you decide to discard certain changes; you can easily go back to a previous version and work from there instead of starting from scratch. Version control usually involves recording who made the changes and when. This helps if you're ever questioning changes made to the project; you now know exactly who to ask. You can see a form of version control in programs like Microsoft Word through the AutoSave feature. Microsoft Word automatically saves your file as your are editing and you can then select a previous version if needed. Think of version control as saving many snapshots of your project as it progresses. At any point in the future you can go back to a snapshot either to reference the work or re-start the project from that point. Version control be seen across many different fields but it's very beneficial for developers collaborating on the same project. This is what I want to focus on today.
-        </p>
-        <p>
-        Git is an example of version control software mainly used by developers to track changes to a project. Git is free to use and tracks changes to code stored locally. Once you download Git you simply create a directory for your project and use the -git init command to create a repository for all the project files. Git is now aware of the project that you want to track. Let's say you you add one html file to your new repository that says "Hello World". To tell Git about this file you would add it by entering -git add &lt;filename&gt;. To save the file as it currently stands you enter -git commit -m "Commit Message". A commit message is a note that explains what this commit (or save) is doing. In our case it's simply adding an html file that says "Hello World". You would repeat this process every time you make changes to your file; Git is tracking it all the way. Git allows you to see every commit that was made along with who made the commit, the date, time, commit message, and a unique identifer (called a hash). So what happens if you save your project and find out you made a big mistake in your code? Don't worry, you can easily go back to any previous commit where your code was working and start from there. What a relief!
-        </p>
-        <p>
-        We see how nice it is it use Git to save different versions of our project, but another very powerful function of Git is the ability to branch off of our main project. Let's say we have a working program but we want to introduce a new feature. Using Git, we can create a branch off of our current project and work on this feature without fear of breaking our original code. This is very comforting for beginners like me! To create a branch off our original project we just enter -git checkout -b &lt;branch-name&gt;. We can add code to our program on this new branch, run our tests, and safely merge it with our original code without fear of everything breaking.
-        </p>
-        <p>
-        Hopefully now you can see how useful Git is as you work on a project. But what about when we want to share this code and work on it with our friends or co-workers? This is where GitHub comes in. While Git lives locally on your computer, GitHub is a web based hosting service for your Git repositories. You can either push your local code to GitHub or pull other people's code from GitHub to your computer. This changes the way we collaborate on a project. Now you can share your code via GitHub to many different people and all work on a project at the same time. GitHub is a nice way to visually see the code, who made changes, and when. Another great functionality of GitHub is the ability to comment on a branch before merging it with the main project. If you create a branch with a new feature, you can request somebody to review the code before merging it with the main project. I think it's pretty amazing that all the code on GitHub is available for the public to view and pull to their computer. This can lead to great improvements on existing projects that the original creator never thought of.
-        </p>
-        <p>
-        I hope that this gave you a primer on why we would want to use Git and GitHub when working on a project - even if it's not software. Anybody can download Git and create a GitHub account for free. Give it a try and see how it changes the way you collaborate on a project.
-        </p>
-    </article>
-    <aside>
-        <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
-        <h2>Welcome.</h2>
+    <section class="two-column">
+      <article class="col-1 blog-post">
+        <h1 class="main-header">Benefits of Version Control</h1>
+        <h2 id="blog-subtitle">How Git and GitHub work together to make your life easier</h2>
+        <h3 class="date">November 11, 2015</h3>
           <p>
-            Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+          Hello and welcome to my first blog post in Dev Bootcamp! Today I'm taking a look at the benefits of version control and how using Git and GitHub work together to make collaborating on a project easier and more effective.
           </p>
-          <p>Enjoy!</p>
-      </aside>
-    <footer>
+          <p>
+          First off - what is version control and why is it so important? Version control is simply saving your project every time you make changes so that you end up with multiple versions of a project. This is helpful if you decide to discard certain changes; you can easily go back to a previous version and work from there instead of starting from scratch. Version control usually involves recording who made the changes and when. This helps if you're ever questioning changes made to the project; you now know exactly who to ask. You can see a form of version control in programs like Microsoft Word through the AutoSave feature. Microsoft Word automatically saves your file as your are editing and you can then select a previous version if needed. Think of version control as saving many snapshots of your project as it progresses. At any point in the future you can go back to a snapshot either to reference the work or re-start the project from that point. Version control be seen across many different fields but it's very beneficial for developers collaborating on the same project. This is what I want to focus on today.
+          </p>
+          <p>
+          Git is an example of version control software mainly used by developers to track changes to a project. Git is free to use and tracks changes to code stored locally. Once you download Git you simply create a directory for your project and use the -git init command to create a repository for all the project files. Git is now aware of the project that you want to track. Let's say you you add one html file to your new repository that says "Hello World". To tell Git about this file you would add it by entering -git add &lt;filename&gt;. To save the file as it currently stands you enter -git commit -m "Commit Message". A commit message is a note that explains what this commit (or save) is doing. In our case it's simply adding an html file that says "Hello World". You would repeat this process every time you make changes to your file; Git is tracking it all the way. Git allows you to see every commit that was made along with who made the commit, the date, time, commit message, and a unique identifer (called a hash). So what happens if you save your project and find out you made a big mistake in your code? Don't worry, you can easily go back to any previous commit where your code was working and start from there. What a relief!
+          </p>
+          <p>
+          We see how nice it is it use Git to save different versions of our project, but another very powerful function of Git is the ability to branch off of our main project. Let's say we have a working program but we want to introduce a new feature. Using Git, we can create a branch off of our current project and work on this feature without fear of breaking our original code. This is very comforting for beginners like me! To create a branch off our original project we just enter -git checkout -b &lt;branch-name&gt;. We can add code to our program on this new branch, run our tests, and safely merge it with our original code without fear of everything breaking.
+          </p>
+          <p>
+          Hopefully now you can see how useful Git is as you work on a project. But what about when we want to share this code and work on it with our friends or co-workers? This is where GitHub comes in. While Git lives locally on your computer, GitHub is a web based hosting service for your Git repositories. You can either push your local code to GitHub or pull other people's code from GitHub to your computer. This changes the way we collaborate on a project. Now you can share your code via GitHub to many different people and all work on a project at the same time. GitHub is a nice way to visually see the code, who made changes, and when. Another great functionality of GitHub is the ability to comment on a branch before merging it with the main project. If you create a branch with a new feature, you can request somebody to review the code before merging it with the main project. I think it's pretty amazing that all the code on GitHub is available for the public to view and pull to their computer. This can lead to great improvements on existing projects that the original creator never thought of.
+          </p>
+          <p>
+          I hope that this gave you a primer on why we would want to use Git and GitHub when working on a project - even if it's not software. Anybody can download Git and create a GitHub account for free. Give it a try and see how it changes the way you collaborate on a project.
+          </p>
+      </article>
+      <aside class="col-2">
+        <div class="aside-wrapper">
+          <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+          <h2>Welcome.</h2>
+            <p>
+              Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+            </p>
+            <p>Enjoy!</p>
+        </aside>
+      </div>
+    </section>
+    <footer class="blog-post-footer">
       <div class="horizontal-bar"></div>
       <ul class="footer-list">
         <li><a target="_blank" href="https://github.com/cstallings1">GitHub</a></li>
