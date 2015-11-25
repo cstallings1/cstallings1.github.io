@@ -3,11 +3,15 @@
 <head>
   <title>DBC Blog</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
   <body>
     <header>
       <nav>
-        <ul>
+        <ul class="header-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="index.html">Blog</a></li>
           <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
@@ -16,20 +20,34 @@
           <li><a href="../contact/index.html">Contact</a></li>
         </ul>
       </nav>
+      <div class="horizontal-bar"></div>
     </header>
-    <article>
-      <h1>Title of Blog Post</h1>
-      <h2>Subtitle</h2>
-      <h3>Date</h3>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-        </p>
-    </article>
-    <footer>
-      <ul>
+    <section class="two-column">
+      <article class="col-1 blog-post">
+        <h1 class="main-header">Blog Post Title</h1>
+        <h2 id="blog-subtitle">Blog Post Subtitle</h2>
+        <h3 class="date">Date</h3>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+          </p>
+      </article>
+      <aside class="col-2">
+        <div class="aside-wrapper">
+          <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+          <h2>Welcome.</h2>
+            <p>
+              Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+            </p>
+            <p>Enjoy!</p>
+        </aside>
+      </div>
+    </section>
+    <footer class="blog-post-footer">
+      <div class="horizontal-bar"></div>
+      <ul class="footer-list">
         <li><a target="_blank" href="https://github.com/cstallings1">GitHub</a></li>
         <li><a target="_blank" href="https://www.linkedin.com/in/catie-stallings-22475828">LinkedIn</a></li>
         <li><a target="_blank" href="https://www.facebook.com/CatieHeberer">Facebook</a></li>
