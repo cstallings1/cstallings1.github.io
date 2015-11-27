@@ -1,4 +1,4 @@
-[Link to my website](cstallings1.github.io)
+[Link to my website](https://cstallings1.github.io/)
 
 ####What did you learn about CSS padding, borders, and margin by doing this challenge?
 I learned first hand how tricky it can be to get these properties to work together to position your elements on your webpage. Using the box-sizing property with a value of border-box helped make it a little less complicated by allowing me to include the padding and border in the width and height. I also learned how much changing your border width affects the positioning of the contents.
