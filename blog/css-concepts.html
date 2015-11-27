@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DBC Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
+  <body>
+    <header>
+      <nav>
+        <ul class="header-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="horizontal-bar"></div>
+    </header>
+    <section class="two-column">
+      <article class="col-1 blog-post">
+        <h1 class="main-header">Display: inline vs inline-block</h1>
+        <h2 id="blog-subtitle">What's the difference and what does it mean?</h2>
+        <h3 class="date">November 27, 2015</h3>
+          <p>
+            There are so many ways to position elements in CSS it's hard to know which to use and why. The display property is one way of positioning your elements in CSS. The commonly used display property values are block, inline, inline-block, or none. In this post I want to break down the difference between inline and inline-block. I've included a code snippet below showing how you would add these display properties to your stylesheet. I used div as an example element but you could use any element you like:
+              <script src="https://gist.github.com/cstallings1/9562bc26a6b65c0eba06.js"></script>
+          </p>
+          <p>
+            First let's quickly talk about what a block element is before jumping into inline and inline-block. An element with display set to block will take up a whole line and create a line break before and after. If you created a few elements for your webpage and set them all to block, you would see them stacked on top of eachother. If you don't set their width, the element takes up the whole line. If you do specify their width, the element does not take up the whole line but the line break will force the next element to the line below. It helps to visualize this so I've added an image below showing 4 elements each with their width set to 400 pixels and display set to block. As you can see they are all on their own line.
+            <img class="inline-blog-image" src="../imgs/all_blocks.png">
+            </p>
+            <p>
+              Now to inline and inline-block. Both inline and inline-block allow other elements to sit on the same line. Imagine a nagivation bar - all the links sit on the same line in a row. This is a great example of inline and inline-block in action. The big difference between these two display properties is the ability to set a width and height. If you have two elements, one set to inline the other set to inline-block, and set both their widths to 100 pixels, they will not be the same size. Inline elements do not accept height and width, they will only be as large as their contents. Inline-block elements will adjust based on a given height or width. Again, I think it's helpful to see a visual so take a look below. I've set the inline and inline-block elements to 100 pixels wide, but they are different sizes because of what we just discussed.
+              <img class="inline-blog-image" src="../imgs/display.png">
+              Notice the block element is still sitting on it's own line.
+          </p>
+          <p>
+            Imagine using an inline display to <span class="bold">highlight</span> a word in a paragraph, the element size doesn't really matter as long as it is large enough to contain the word we want to highlight. When creating something like a horizontal navbar we would most likely want to use inline-block because we want to the links across the top to be the same size and evenly spaced. I hope this helped to clear up the difference between inline and inline-block elements.
+          </p>
+      </article>
+      <aside class="col-2">
+        <div class="aside-wrapper">
+          <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+          <h2>Welcome.</h2>
+            <p>
+              Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+            </p>
+            <p>Enjoy!</p>
+        </div>
+      </aside>
+    </section>
+    <footer class="blog-post-footer">
+      <div class="horizontal-bar"></div>
+      <ul class="footer-list">
+        <li><a target="_blank" href="https://github.com/cstallings1">GitHub</a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/catie-stallings-22475828">LinkedIn</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/CatieHeberer">Facebook</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
+
+<!--
+- How was it to wireframe and create an HTML page with a pair?
+It went smoothly and a lot faster than I thought it would. It actually helped me wireframe more efficiently because I felt more pressure to make a design decision. When I was wireframing alone I tended to get caught up playing with different layouts and not making a quick decision.
+
+- Did you find wireframing to be helpful to your development process?
+Although tedious at times, I do think that it helped me in the development process. I was able to focus on just the layout and not get distracted thinking about fonts and colors right off the bat.
+
+- What did you and your pair decide made a good wireframe?
+We decided a good wireframe was not overly complicated but showed enough detail to make it clear what the layout of the site would look like. We made a simple layout with the main focus being the content of the blog post.
+
+- What new semantic elements did you learn about (if any)?
+I didn't learn about any new semantics in this challenge. It really built off all the other HTML challenges I've been working on this week.
+
+-Link to wireframe image:
+https://cstallings1.github.io/imgs/wireframe-blogs.png
+-->
