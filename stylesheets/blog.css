@@ -1,5 +1,5 @@
 .two-column {
-  height: 92%;
+  height: 100%;
   text-align: center;
   font-family: 'Lato', sans-serif;
 }
@@ -7,7 +7,7 @@
 .col-1 {
   display: inline-block;
   width: 64%;
-  height:88%;
+  height:100%;
   padding-top: 6%;
   text-align: center;
   border-right: solid white 5px;
@@ -31,7 +31,7 @@
 }
 
 .main-content-list {
-  height: 82%;
+  height: 100%;
 }
 
 .main-content-list li {
@@ -69,8 +69,9 @@
   line-height: 2em;
 }
 
-.blog-post-footer {
-  position: static;
+.blog-footer {
+  position: absolute;
+  bottom: 0;
 }
 
 .inline-blog-image {
