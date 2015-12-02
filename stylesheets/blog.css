@@ -57,7 +57,7 @@
   text-align: left;
 }
 
-#blog-subtitle {
+.blog-subtitle {
   font-size: 1em;
   font-family: 'Crimson Text', serif;
 }
@@ -76,5 +76,6 @@
 .inline-blog-image {
   width: 100%;
 }
+
 
 
