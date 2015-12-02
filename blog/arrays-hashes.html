@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DBC Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
+  <body>
+    <header>
+      <nav>
+        <ul class="header-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="horizontal-bar"></div>
+    </header>
+    <section class="two-column">
+      <article class="col-1 blog-post">
+        <h1 class="main-header">Comparing Arrays and Hashes</h1>
+        <h2 class="blog-subtitle">What's the difference and which one to use?</h2>
+        <h3 class="date">December 3, 2015</h3>
+          <p>
+            We're on to another programming language this week - Ruby! Last week we talked about CSS and how we can use it to design websites, this week we'll talk about some Ruby concepts which has more to do with data. Arrays and hashes are data structures used in Ruby that can be very helpful for organizing, retreiving, and updating data. I won't get into too much detail in this post but I want to explain what they are and how you can use them in different situations.
+          </p>
+          <h2 id="blog-subtitle">Array</h2>
+          <p>
+            An array is a collection of data ordered by index - it looks like a list.
+          </p>
+              <pre><code>array_of_numbers = [1, 2, 3, 4]</code></pre>
+              <pre><code>array_of_strings = ["cat", "dog", "bird"]</code></pre>
+              <pre><code>array_of_arrays = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]</code></pre>
+          <p>
+            As you can see, an array can contain numbers, words, or even more arrays.You can also have an array that contains different types of elements, like numbers and words. I say they are ordered by index because each element in the array is assigned an index starting at 0 (notice we don't start counting at 1) and counting up from there. If I wanted to retrieve the second element in the array_of_strings, I would write:
+          </p>
+              <pre><code>array_of_strings[1]</code></pre>
+          <p>
+            This grabs "dog" from the array. Notice "cat" is at index 0, and dog is at index 1.
+          </p>
+          <h2 id="blog-subtitle">Hash</h2>
+          <p>
+            A hash is similar to an array but it doesn't have an index assigned to it. Instead it has keys assigned to values, and you determine what the keys are. I'll show you an example of a hash using my name as data:
+          </p>
+              <pre><code>
+                my_name = {
+                  :first_name => "Catie",
+                  :last_name => "Stallings"
+                }
+              </code></pre>
+               <pre><code>
+                my_name = {
+                  first_name: "Catie",
+                  last_name: "Stallings"
+                }
+              </code></pre>
+          <p>
+            If I wanted to retrieve my first name from this hash I would use the key (first_name) to get the associated value (Catie):
+          </p>
+              <pre><code>my_name[:first_name]</code></pre>
+          <p>
+            And you'll notice I wrote the hash twice with slightly different syntax, I just wanted to show you that there are different ways of creating a hash. You can see it's similiar to an array but you can add more information to a hash. It helps to think of a hash like a dictionary. Another notable aspect of a hash is that the keys must be unique even though the values don't have to be.
+          </p>
+          <h2 id="blog-subtitle">Which to use?</h2>
+          <p>
+            Knowing when to use an array or a hash is something you have to feel out for yourself and take into consideration the code you're writing. There aren't any hard and fast rules I know of. But by seeing how these concepts differ you can start to see how they might be useful in different ways. Hashes are probably best used with associative data. If I'm storing my personal information in either an array or a hash, I'll choose the hash and here's why:
+          </p>
+              <div><pre><code>
+                personal_info_ary = ["Catie", "Stallings", 25, 60462]
+              </code></pre>
+              <pre><code>
+                personal_info_hash = {
+                  :first_name => "Catie",
+                  :last_name => "Stallings",
+                  :age => 25,
+                  :zip => 60462
+                }
+              </code></pre>
+            <p>
+            The hash give a lot more information about this data, the array is a little confusing. This only scratches the surface of what arrays and hashes can do. If you're interested in seeing some awesome things you can do with them check out the Ruby documentation on <span class="bold"><a href="http://ruby-doc.org/core-1.9.3/Array.html">arrays</a></span> and <span class="bold"><a href="http://ruby-doc.org/core-2.2.2/Hash.html">hashes</a></span>.
+          </p>
+      </article>
+      <aside class="col-2">
+        <div class="aside-wrapper">
+          <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+          <h2>Welcome.</h2>
+            <p>
+              Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+            </p>
+            <p>Enjoy!</p>
+        </div>
+      </aside>
+    </section>
+    <footer>
+      <div class="horizontal-bar"></div>
+      <ul class="footer-list">
+        <li><a target="_blank" href="https://github.com/cstallings1">GitHub</a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/catie-stallings-22475828">LinkedIn</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/CatieHeberer">Facebook</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
