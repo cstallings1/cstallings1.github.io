@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>DBC Blog</title>
+  <title>Contact</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/about_contact.css">
   <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
 </head>
@@ -13,39 +14,43 @@
         <nav>
           <ul class="header-list">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">Blog</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
             <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../about/index.html">About</a></li>
-            <li><a href="../contact/index.html">Contact</a></li>
+            <li><a href="index.html">Contact</a></li>
           </ul>
         </nav>
         <div class="horizontal-bar"></div>
       </header>
       <section class="two-column">
         <article class="col-1">
-          <h1 class="main-header">Welcome To My Blog</h1>
-          <ul class="main-content-list">
-            <li>
-              <h2 class="blog-title"><a href="git.html">Benefits of Version Control</a></h2>
-              <p class="date">November 11, 2015</p>
-            </li>
-            <li>
-              <h2 class="blog-title"><a href="css-concepts.html">Display: inline vs inline-block</a></h2>
-              <p class="date">November 27, 2015</p>
-            </li>
-            <li>
-              <h2 class="blog-title"><a href="arrays-hashes.html">Comparing Arrays and Hashes</a></h2>
-              <p class="date">December 2, 2015</p>
-            </li>
-          </ul>
+          <h1 class="main-header">Contact</h1>
+          <div id="form-main">
+            <div id="form-div">
+              <form class="form" method="POST" action="mailto:catiestallings1@gmail.com">
+                <p class="name">
+                  <input name="name" type="text" class="input" placeholder="name" id="name">
+                </p>
+                <p class="email">
+                  <input name="email" type="text" class="input" placeholder="email" id="email">
+                </p>
+                <p class="message">
+                  <textarea name="text" class="input" placeholder="send me a message" id="message"></textarea>
+                </p>
+                <div class="submit">
+                  <input type="submit" value="SEND" id="submit-buttom">
+                </div>
+              </form>
+            </div>
+          </div>
         </article>
         <aside class="col-2">
           <div class="aside-wrapper">
             <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
             <h2><span class="bold">Welcome.</span></h2>
               <p>
-                Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+                Feel free to take a look around - you'll find different ways to contact me. I'd love to hear from you.
               </p>
               <p>Enjoy!</p>
           </div>
