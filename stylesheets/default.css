@@ -77,7 +77,7 @@ h1 {
   color: #172B36;
 }
 
-#resume-button {
+.button {
   padding: 2%;
   background-color: white;
   border: solid #476367 2px;
@@ -99,4 +99,9 @@ footer {
   margin-right: 5%;
   padding-right: 6%;
   padding-left: 6%;
+}
+
+.social-media-icon {
+  height: 25px;
+  width: 26px;
 }
