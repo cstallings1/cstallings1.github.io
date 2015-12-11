@@ -1,3 +1,7 @@
+.blog-post-body{
+  height: initial;
+}
+
 .two-column {
   height: 100%;
   text-align: center;
@@ -36,7 +40,7 @@
 
 .main-content-list li {
   margin: 0;
-  height: 15%;
+  height: 8%;
   list-style-type: none;
 }
 
