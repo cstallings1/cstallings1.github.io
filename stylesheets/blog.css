@@ -10,7 +10,7 @@
 
 .col-1 {
   display: inline-block;
-  width: 64%;
+  width: 67%;
   height:100%;
   padding-top: 6%;
   text-align: center;
@@ -36,6 +36,7 @@
 
 .main-content-list {
   height: 100%;
+  padding: 0;
 }
 
 .main-content-list li {
@@ -84,7 +85,6 @@
 #left-align-icons {
   text-align: left;
   padding-left: 13%;
-
 }
 
 
