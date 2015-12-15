@@ -87,5 +87,27 @@
   padding-left: 13%;
 }
 
+@media(max-width: 858px) {
+  .main-header {
+    padding-top: 8%;
+  }
+  .blog-title {
+    padding-right: 8%;
+  }
+}
+@media(max-width: 700px) {
+  .main-header {
+    padding-top: 20%;
+  }
+
+  .blog-title {
+    display: block;
+  }
+
+  .main-content-list li {
+    height: auto;
+  }
+}
+
 
 
