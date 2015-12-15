@@ -50,3 +50,35 @@ textarea {
   font-family: 'Lato', sans-serif;
   font-size: 1em;
 }
+
+@media (max-width: 1200px) {
+  .main-header {
+    padding-top: 3%;
+  }
+
+  .col-1 {
+    overflow-y: scroll;
+  }
+
+  #form-div {
+    height: 60%;
+  }
+
+  textarea {
+    height: 257px;
+  }
+}
+
+@media (max-width: 522px) {
+  .main-header {
+    padding-top: 15%;
+  }
+
+  .col-1 {
+    overflow-y: scroll;
+  }
+
+  /*#message {
+    height: 250px;
+  }*/
+}
