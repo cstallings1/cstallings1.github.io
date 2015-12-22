@@ -109,7 +109,7 @@ footer {
 @media (max-width: 1188px) {
   .one-column {
     width: auto;
-    padding-top: 15%;
+    padding-top: 13%;
   }
 
   .header-list li {
@@ -119,22 +119,37 @@ footer {
 }
 
 @media (max-width: 833px) {
-  .one-column {
-    width: auto;
-  }
+
   .header-list li {
     padding-right: 3%;
     padding-left: 3%;
   }
 }
 
-@media (max-width: 465px) {
+@media (max-width: 530px) {
+  header {
+    position: static;
+  }
+
   .header-list li {
+    font-size: 4vw;
     padding-right: 2%;
     padding-left: 2%;
   }
+
+  .one-column {
+    font-size: 5vw;
+    margin: auto;
+    width: 90%;
+  }
+
   .button {
     font-size: 0.6em;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
   }
 }
 

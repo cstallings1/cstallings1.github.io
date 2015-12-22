@@ -14,10 +14,10 @@
         <ul class="header-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="index.html">Blog</a></li>
-          <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
           <li><a href="../projects/index.html">Projects</a></li>
           <li><a href="../about/index.html">About</a></li>
           <li><a href="../contact/index.html">Contact</a></li>
+          <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
         </ul>
       </nav>
       <div class="horizontal-bar"></div>
@@ -27,113 +27,105 @@
         <h1 class="main-header">Overview of Ruby Classes</h1>
         <h2 class="blog-subtitle">Using classes to model real world objects</h2>
         <h3 class="date">December 16, 2015</h3>
-          <p>
-            Welcome to another week of exploring Ruby with me. Lately we've been talking a lot about data and how to structure and manipulate it. Today we're going to look at another aspect of Ruby - classes. Classes are a way to bundle methods together so that you can pass data from one method to another easily. We can use methods to describe the behaviors and attributes of their class. It's pretty simple to find a real world object that you could model a class after - I'm going to use my pets as an example and make a 'Cat' class.
-          </p>
-          <p>
-            It's important to realize that when we create a class, we're allowing ourselves to create instances of that class that can have different attributes from other instances of that class. So we're creating a 'Cat' class and I want to recreate my cat Lucy using this class. Here's how we'll start out:
-          </p>
-          <p>
-            <pre><code>
-              class Cat
-                attr_reader :name
+        <p>
+          Welcome to another week of exploring Ruby with me. Lately we've been talking a lot about data and how to structure and manipulate it. Today we're going to look at another aspect of Ruby - classes. Classes are a way to bundle methods together so that you can pass data from one method to another easily. We can use methods to describe the behaviors and attributes of their class. It's pretty simple to find a real world object that you could model a class after - I'm going to use my pets as an example and make a 'Cat' class.
+        </p>
+        <p>
+          It's important to realize that when we create a class, we're allowing ourselves to create instances of that class that can have different attributes from other instances of that class. So we're creating a 'Cat' class and I want to recreate my cat Lucy using this class. Here's how we'll start out:
+        </p>
+        <pre><code>
+          class Cat
+          attr_reader :name
 
-                def initialize(name, age)
-                  @name = name
-                  @age = age
-                  @belly_rubs = 0
-                end
+          def initialize(name, age)
+          @name = name
+          @age = age
+          @belly_rubs = 0
+          end
 
-                def age
-                  return "#{@name} is #{@age} year(s) old."
-                end
-              end
+          def age
+          return "#{@name} is #{@age} year(s) old."
+          end
+          end
 
-              lucy = Cat.new("Lucy", 2)
-              p lucy.name
-              p lucy.age
+          lucy = Cat.new("Lucy", 2)
+          p lucy.name
+          p lucy.age
 
-              OUTPUT:
-              "Lucy"
-              "Lucy is 2 year(s) old."
-          </code></pre>
-          </p>
-          <p>
-            We defined the class and created a method called 'initialize' that took name and age as arguments. The initialize method is a standard method used with classes, it's called every time a new instance of the class is created. You probaby noticed that our variables inside the initialize method started with '@'. This is because they are instance variables, not local variables. Instead of being confined to their method, they can be called in other methods as long as they are within the instance of the class. We also set a variable called 'belly_rubs' to 0 but I'll explain that later. To create a cat named Lucy, we set Cat.new to a variable and passed in a name and age as arguments. That line created a new instance of cat, so we now have a new object (lucy) that we can use when calling methods. You can see all we needed to do to print Lucy's name and age was call lucy.name and lucy.age. We could do this because we created an age method that returns the @age instance variable - this type of method is called an instance method and can be called anywhere within the instance of the class. The first line inside the class that sets attr_reader to :name is just a shorthand way of creating an instance method that would return @name when called.
-          </p>
-          <p>
-            We've successfully created my cat Lucy using a class. But she doesn't do anything yet, let's create some methods to describe her behavior. She talks a lot so we can create a meow method and she likes her belly rubbed so let's add those methods to our class:
-          </p>
-          <p>
-            <pre><code>
-              class Cat
-                attr_reader :name
+          OUTPUT:
+          "Lucy"
+          "Lucy is 2 year(s) old."
+        </code></pre>
+        <p>
+          We defined the class and created a method called 'initialize' that took name and age as arguments. The initialize method is a standard method used with classes, it's called every time a new instance of the class is created. You probaby noticed that our variables inside the initialize method started with '@'. This is because they are instance variables, not local variables. Instead of being confined to their method, they can be called in other methods as long as they are within the instance of the class. We also set a variable called 'belly_rubs' to 0 but I'll explain that later. To create a cat named Lucy, we set Cat.new to a variable and passed in a name and age as arguments. That line created a new instance of cat, so we now have a new object (lucy) that we can use when calling methods. You can see all we needed to do to print Lucy's name and age was call lucy.name and lucy.age. We could do this because we created an age method that returns the @age instance variable - this type of method is called an instance method and can be called anywhere within the instance of the class. The first line inside the class that sets attr_reader to :name is just a shorthand way of creating an instance method that would return @name when called.
+        </p>
+        <p>
+          We've successfully created my cat Lucy using a class. But she doesn't do anything yet, let's create some methods to describe her behavior. She talks a lot so we can create a meow method and she likes her belly rubbed so let's add those methods to our class:
+        </p>
+        <pre><code>
+          class Cat
+          attr_reader :name
 
-                def initialize(name, age)
-                  @name = name
-                  @age = age
-                  @belly_rubs = 0
-                end
+          def initialize(name, age)
+          @name = name
+          @age = age
+          @belly_rubs = 0
+          end
 
-                def age
-                  return "#{@name} is #{@age} year(s) old."
-                end
+          def age
+          return "#{@name} is #{@age} year(s) old."
+          end
 
-                def meow
-                  return "Meowwww"
-                end
+          def meow
+          return "Meowwww"
+          end
 
-                def rub_belly
-                  @belly_rubs += 1
-                  if @belly_rubs >= 3
-                    return "That was one too many belly rubs,
-                    #{@name} bit you!"
-                  else
-                    return "Rubbing #{@name}'s belly..."
-                  end
-                end
-              end
-            </code></pre>
-          </p>
-          <p>
-            Now we can make our cat talk by calling the meow method on lucy, and we can rub her belly by calling the rub_belly method. Notice that we are using the instance variables @name and @belly_rubs in the rub_belly method. This data can be passed around between methods within the class. Let's see what the output is when we call our new methods:
-          </p>
-          <p>
-            <pre><code>
-              lucy = Cat.new("Lucy", 2)
-              p lucy.meow
-              p lucy.rub_belly
-              p lucy.rub_belly
-              p lucy.rub_belly
+          def rub_belly
+          @belly_rubs += 1
+          if @belly_rubs >= 3
+          return "That was one too many belly rubs,
+          #{@name} bit you!"
+          else
+          return "Rubbing #{@name}'s belly..."
+          end
+          end
+          end
+        </code></pre>
+        <p>
+          Now we can make our cat talk by calling the meow method on lucy, and we can rub her belly by calling the rub_belly method. Notice that we are using the instance variables @name and @belly_rubs in the rub_belly method. This data can be passed around between methods within the class. Let's see what the output is when we call our new methods:
+        </p>
+        <pre><code>
+          lucy = Cat.new("Lucy", 2)
+          p lucy.meow
+          p lucy.rub_belly
+          p lucy.rub_belly
+          p lucy.rub_belly
 
-              OUTPUT:
-              "Meowwww"
-              "Rubbing Lucy's belly..."
-              "Rubbing Lucy's belly..."
-              "That was one too many belly rubs, Lucy bit you!"
-            </code></pre>
-          </p>
-          <p>
-            Great - we can now interact with our virtual cat. We made her talk and we rubbed her belly. Notice the third time we called rub_belly our cat bit us, we used flow control in our rub_belly method to count the number of belly_rubs and bite us on the third one. This is why we had to create the @belly_rubs variable and set it to 0 in the initialize method.We're now using our class to model the real world behavior of my cat - I never said she was a nice cat. But what if we want to make a new cat? That's easy now that we have the a Cat class:
-          </p>
-          <p>
-            <pre><code>
-              dorian = Cat.new("Dorian", 4)
-              p dorian.name
-              p dorian.age
-              p dorian.meow
-              p dorian.rub_belly
+          OUTPUT:
+          "Meowwww"
+          "Rubbing Lucy's belly..."
+          "Rubbing Lucy's belly..."
+          "That was one too many belly rubs, Lucy bit you!"
+        </code></pre>
+        <p>
+          Great - we can now interact with our virtual cat. We made her talk and we rubbed her belly. Notice the third time we called rub_belly our cat bit us, we used flow control in our rub_belly method to count the number of belly_rubs and bite us on the third one. This is why we had to create the @belly_rubs variable and set it to 0 in the initialize method.We're now using our class to model the real world behavior of my cat - I never said she was a nice cat. But what if we want to make a new cat? That's easy now that we have the a Cat class:
+        </p>
+        <pre><code>
+          dorian = Cat.new("Dorian", 4)
+          p dorian.name
+          p dorian.age
+          p dorian.meow
+          p dorian.rub_belly
 
-              OUTPUT:
-              "Dorian"
-              "Dorian is 4 year(s) old."
-              "Meowwww"
-              "Rubbing Dorian's belly..."
-            </code></pre>
-          </p>
-          <p>
-            All we had to do was pass a new name and age to Cat.new and we had a new instance of the class. Our cat named Dorian is similar to Lucy but has different attributes - his name and age are different of course. OK so this example is a little silly, but I think it shows how you can use classes to model real world objects and interact with them. You could easily do this same exercise with an Employee class or a Ticket class, and use methods that would make sense for driving the behavior of that class. The great thing about classes is the ability to be able to pass data between methods using instance variables. It's also really easy to have a method call another method within the class. This flexibility is really useful, try to think of some other real world objects that could be recreated with a class. Well that's all I've got for this week - next week we have off for the holidays so I'll talk to you in a couple weeks.
-          </p>
+          OUTPUT:
+          "Dorian"
+          "Dorian is 4 year(s) old."
+          "Meowwww"
+          "Rubbing Dorian's belly..."
+        </code></pre>
+        <p>
+          All we had to do was pass a new name and age to Cat.new and we had a new instance of the class. Our cat named Dorian is similar to Lucy but has different attributes - his name and age are different of course. OK so this example is a little silly, but I think it shows how you can use classes to model real world objects and interact with them. You could easily do this same exercise with an Employee class or a Ticket class, and use methods that would make sense for driving the behavior of that class. The great thing about classes is the ability to be able to pass data between methods using instance variables. It's also really easy to have a method call another method within the class. This flexibility is really useful, try to think of some other real world objects that could be recreated with a class. Well that's all I've got for this week - next week we have off for the holidays so I'll talk to you in a couple weeks.
+        </p>
       </article>
       <aside class="col-2">
         <div class="aside-wrapper">

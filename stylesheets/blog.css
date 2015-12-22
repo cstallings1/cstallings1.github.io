@@ -15,7 +15,6 @@
   padding-top: 6%;
   text-align: center;
   border-right: solid white 5px;
-
 }
 
 .col-2 {
@@ -30,6 +29,7 @@
 }
 
 .main-header {
+  /*padding-top: 6%;*/
   font-family: 'Crimson Text', serif;
   font-size: 2em;
 }
@@ -87,15 +87,21 @@
   padding-left: 13%;
 }
 
+code {
+  font-size: 1.5vw;
+}
+
 @media(max-width: 858px) {
   .main-header {
     padding-top: 8%;
+    font-size: 7vw;
   }
   .blog-title {
     padding-right: 8%;
   }
 }
-@media(max-width: 700px) {
+
+@media(max-width: 750px) {
   .main-header {
     padding-top: 20%;
   }
@@ -106,6 +112,20 @@
 
   .main-content-list li {
     height: auto;
+  }
+
+  .photo-self {
+  width: 50%;
+  }
+}
+
+@media(max-width: 590px) {
+   body {
+    font-size: 4.5vw;
+  }
+
+  footer{
+    position: initial;
   }
 }
 
