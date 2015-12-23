@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DBC Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
+  <body class="blog-post-body">
+    <header>
+      <nav>
+        <ul class="header-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+          <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
+        </ul>
+      </nav>
+      <div class="horizontal-bar"></div>
+    </header>
+    <section class="two-column">
+      <article class="col-1 blog-post">
+        <h1 class="main-header">Objects in Ruby vs JavaScript</h1>
+        <h2 class="blog-subtitle">Ruby classes and JavaScript constructor functions</h2>
+        <h3 class="date">December 23, 2015</h3>
+          <p>Last week we took a look at Ruby classes and how we could use them to model real world objects. We saw that we could create a class (like our cat from the previous post) and create methods and attributes to drive behavior. This week we've moved on to JavaScript so I thought it would be interesting to compare Ruby classes with JavaScript constructor functions.
+          </p>
+          <p>A constructor function is one of the ways you can create an object in JavaScript, similar to Ruby classes. First, let's create a simple Ruby person class and then we'll see how we can acheive the same outcome using a constructor function.
+          </p>
+          <pre><code>
+            class Person
+              def initialize(name, age)
+                @name = name
+                @age = age
+              end
+            end
+
+            new_person = Person.new("Catie", 25)
+          </code></pre>
+          <p>Right now all we've done is created a person class that takes a name and age as arguments, then I created an instance of the class with the name "Catie" and age 25 as shown on the last line. Here's how we'd do that using a constructor function in JavaScript:
+          </p>
+          <pre><code>
+            function Person(name, age) {
+              this.name = name;
+              this.age = age;
+            };
+
+            var newPerson = new Person("Catie", 25);
+          </code></pre>
+          <p>See the difference? In Ruby, we set the parameters as instance variables denoted by the "@". In JavaScript, we set the parameters as property values denoted by the keyword "this". The syntax is slightly different in the last line, but in both cases we're just creating a new instance and setting it to a variable. Now let's add a method that tells us the name and age of our person. Here's how we do it in Ruby:
+          </p>
+          <pre><code>
+            class Person
+              def initialize(name, age)
+                @name = name
+                @age = age
+              end
+
+              def hello
+                return "Hi, my name is #{@name} and
+                I'm #{@age} years old."
+              end
+            end
+
+            new_person = Person.new("Catie", 25)
+            puts new_person.hello
+
+            OUTPUT:
+            Hi, my name is Catie and I'm 25 years old.
+          </code></pre>
+          <p>And here's how we do it using a constructor function:
+          </p>
+          <pre><code>
+            function Person(name, age) {
+              this.name = name;
+              this.age = age;
+              this.hello = function () {
+                return "Hi, my name is " + this.name +
+                " and I'm " + this.age + " years old.";
+              }
+            };
+
+            var newPerson = new Person("Catie", 25);
+            console.log(newPerson.hello())
+
+            OUTPUT:
+            Hi, my name is Catie and I'm 25 years old.
+          </code></pre>
+          <p>So we created a property called "hello" and set it's value to a function that returns a string with our person's name and age. A method in JavaScript is this process of creating a property whose value is a function. And notice that just as we have to use the "@" before instance variables in Ruby, we have to use "this" before a property in a constructor function. This was a very simplified example but I hope it gave you an understanding of how both Ruby and JavaScript can be object oriented.
+          </p>
+      </article>
+      <aside class="col-2">
+        <div class="aside-wrapper">
+          <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+          <h2>Welcome.</h2>
+            <p>
+              Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+            </p>
+            <p>Enjoy!</p>
+        </div>
+      </aside>
+    </section>
+    <footer>
+      <div class="horizontal-bar"></div>
+      <ul class="footer-list" id="left-align-icons">
+        <li><a target="_blank" href="https://github.com/cstallings1"><img class="social-media-icon" src="../imgs/github_icon.png"></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/catie-stallings-22475828"><img class="social-media-icon" src="../imgs/linkedin_icon.png"></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/CatieHeberer"><img class="social-media-icon" src="../imgs/facebook_icon.png"></a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
+
+<!--
+- How was it to wireframe and create an HTML page with a pair?
+It went smoothly and a lot faster than I thought it would. It actually helped me wireframe more efficiently because I felt more pressure to make a design decision. When I was wireframing alone I tended to get caught up playing with different layouts and not making a quick decision.
+
+- Did you find wireframing to be helpful to your development process?
+Although tedious at times, I do think that it helped me in the development process. I was able to focus on just the layout and not get distracted thinking about fonts and colors right off the bat.
+
+- What did you and your pair decide made a good wireframe?
+We decided a good wireframe was not overly complicated but showed enough detail to make it clear what the layout of the site would look like. We made a simple layout with the main focus being the content of the blog post.
+
+- What new semantic elements did you learn about (if any)?
+I didn't learn about any new semantics in this challenge. It really built off all the other HTML challenges I've been working on this week.
+
+-Link to wireframe image:
+https://cstallings1.github.io/imgs/wireframe-blogs.png
+-->
