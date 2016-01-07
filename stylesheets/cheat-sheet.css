@@ -7,7 +7,56 @@ body {
   background-color: #EAEEEF;
 }
 
+.dropdown {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+}
+
+.dropdownButton {
+  width: 100%;
+  font-size: 1.2em;
+  color: #235974;
+  cursor: pointer;
+}
+
+.dropdownButton:hover {
+  background-color: #d9dfe0;
+}
+
+.dropdown-items {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-items a {
+  text-align: left;
+  padding-left: 18%;
+  color: #235974;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-items a:hover {
+  background-color: #d9dfe0;
+}
+
+a.dropdown-subtitle {
+  padding: 2%;
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.show {
+  display: block;
+}
+
 header {
+  position: relative;
   color: white;
   text-align: center;
   padding: 2%;
