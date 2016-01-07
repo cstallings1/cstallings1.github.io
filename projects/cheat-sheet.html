@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cheat Sheet</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+  <script src="../javascript/cheat-sheet.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header>
+    <div class="dropdown">
+      <button onclick="clickFunction()" class="dropdownButton">Jump to Loop</button>
+    <div id="loopDropdown" class="dropdown-items">
+      <a href="#" class="dropdown-subtitle">Ruby</a>
+      <a onClick="scrollFunction('rubyEach')">Each</a>
+      <a onClick="scrollFunction('rubyWhile')">While</a>
+      <a onClick="scrollFunction('rubyFor')">For</a>
+      <a onClick="scrollFunction('rubyLoopDo')">Loop..Do</a>
+      <a onClick="scrollFunction('rubyUntil')">Until</a>
+      <a href="#" class="dropdown-subtitle">JavaScript</a>
+      <a onClick="scrollFunction('javascriptForEach')">forEach</a>
+      <a onClick="scrollFunction('javascriptWhile')">While</a>
+      <a onClick="scrollFunction('javascriptFor')">For</a>
+      <a onClick="scrollFunction('javascriptDoWhile')">Do..while</a>
+      <a onClick="scrollFunction('javascriptForIn')">For..in</a>
+      <a onClick="scrollFunction('javascriptForOf')">For..if</a>
+    </div>
+    </div>
+    <h1 id="main-title">Loops in Ruby vs JavaScript</h1>
+    <p>
+      Loops are an important part of programming and a great way to reduce repetition in your code. This review shows the differences and similarities between loops in Ruby and JavaScript. I'll give a brief explanation and code snippet of each loop in the the different languages so you can see the difference in syntax side by side.
+    </p>
+  </header>
+  <section id="left-column">
+    <h2>Ruby</h2>
+    <ul>
+      <li id="rubyEach">
+        <h3>Each</h3>
+        <p>Each is actually a method in Ruby that iterates over a collection, it's not technically a loop. However, it's used so frequently and that I wanted to include it in the review. #Each executes the given code block for each element in an array.</p>
+        <pre><code>
+          numbers = [1, 2, 3, 4, 5]
+
+          numbers.each {|x| puts "Variable is #{x}"}
+        </code></pre>
+        <pre><code>
+          Variable is 1
+          Variable is 2
+          Variable is 3
+          Variable is 4
+          Variable is 5
+        </code></pre>
+      </li>
+      <li id="rubyWhile">
+        <h3>While loop</h3>
+        <p>Executes a block of code while a given conditional statement is true. You need to initialize the variable outside the loop and increment it at every loop.</p>
+        <pre><code>
+          x = 1
+
+          while x <= 5 do
+            puts "Variable x is: #{x}"
+            x += 1
+          end
+        </code></pre>
+        <pre><code>
+          Variable x is: 1
+          Variable x is: 2
+          Variable x is: 3
+          Variable x is: 4
+          Variable x is: 5
+        </code></pre>
+      </li>
+      <li id="rubyFor">
+        <h3>For Loop</h3>
+        <p>Executes a block of code once for each element in a given expression. In the example below the expression is a range of numbers, you could use an array as the expression and iterate over each element in the array. However, you'll often see the #each method being used for that application.</p>
+        <pre><code>
+          for x in (1..5)
+            puts "Variable x is: #{x}"
+          end
+        </code></pre>
+        <pre><code>
+          Variable x is: 1
+          Variable x is: 2
+          Variable x is: 3
+          Variable x is: 4
+          Variable x is: 5
+        </code></pre>
+      </li>
+      <li id="rubyLoopDo">
+        <h3>Loop..do</h3>
+        <p>Loop do allows you to loop continuously until a conditional statement inside the loop is true. You use the keyword 'break' to break the loop. This keyword is seen in both Ruby and JavaScript.</p>
+        <pre><code>
+          x = 1
+
+          loop do
+            puts "Variable x is: #{x}"
+            x += 1
+            break if x > 5
+          end
+        </code></pre>
+        <pre><code>
+          Variable x is: 1
+          Variable x is: 2
+          Variable x is: 3
+          Variable x is: 4
+          Variable x is: 5
+        </code></pre>
+      </li>
+      <li id="rubyUntil">
+        <h3>Until loop</h3>
+        <p>Executes a block of code until a given condition is true, or you could say it executes while a given a condition is false. This loop is not used in JavaScript.</p>
+        <pre><code>
+          x = 1
+
+          until x > 5 do
+            puts "Variable x is: #{x}"
+            x += 1
+          end
+        </code></pre>
+        <pre><code>
+          Variable x is: 1
+          Variable x is: 2
+          Variable x is: 3
+          Variable x is: 4
+          Variable x is: 5
+        </code></pre>
+      </li>
+    </ul>
+  </section>
+  <section id="right-column">
+    <h2>JavaScript</h2>
+    <ul>
+      <li id="javascriptForEach">
+        <h3>forEach</h3>
+        <p>Executes a provided function for every array element. Unlike in Ruby, we can provide up to three arguments including the element value, element index, and the array being interated over. The syntax is pretty similar to Ruby in this case but it's nice that we can work with index as well.</p>
+        <pre><code>
+          var numbers = [1, 2, 3, 4, 5]
+
+          numbers.forEach(function(x, index){
+            console.log("Current index: " + index + " Current value: " + x);
+          })
+        </code></pre>
+        <pre><code>
+          Current index: 0 Current value: 1
+          Current index: 1 Current value: 2
+          Current index: 2 Current value: 3
+          Current index: 3 Current value: 4
+          Current index: 4 Current value: 5
+        </code></pre>
+      </li>
+      <li id="javascriptWhile">
+        <h3>While loop</h3>
+        <p>Executes a given block of code while a condition is true. This is pretty similar to the Ruby while loop except for the additional brackets and the keyword 'do' is not needed for JavaScript.</p>
+        <pre><code>
+          var x = 1
+
+          while (x <= 5) {
+            console.log("Variable x is " + x);
+            x++;
+          }
+        </code></pre>
+        <pre><code>
+          Variable x is 1
+          Variable x is 2
+          Variable x is 3
+          Variable x is 4
+          Variable x is 5
+        </code></pre>
+      </li>
+      <li id="javascriptFor">
+        <h3>For loop</h3>
+        <p>The for loop in JavaScript accepts three statements. Statement 1 initializes a variable, statement 2 defines the condition, and statement 3 is executed after the loop has been executed, it's used as an incrementer.</p>
+        <pre><code>
+          for (var x = 1; x <= 5; x++) {
+            console.log("Variable x is " + x)
+          }
+        </code></pre>
+        <pre><code>
+          Variable x is 1
+          Variable x is 2
+          Variable x is 3
+          Variable x is 4
+          Variable x is 5
+        </code></pre>
+      </li>
+      <li id="javascriptDoWhile">
+       <h3>Do..while</h3>
+       <p>This is a different way of writing the while loop above and somewhat similar to loop..do in Ruby. Make sure you add those parenthesis around the conditional statement or you'll get an error. JavaScript is pickier than Ruby about syntax.</p>
+        <pre><code>
+          var x = 1
+
+          do {
+            console.log("Variable x is " + x);
+           x++;
+          }
+          while (x <= 5);
+        </code></pre>
+        <pre><code>
+          Variable x is 1
+          Variable x is 2
+          Variable x is 3
+          Variable x is 4
+          Variable x is 5
+        </code></pre>
+      </li>
+      <li id="javascriptForIn">
+      <h3>For..in</h3>
+      <p>The for..in loop is useful for looping through object properies. An object is similar to a Ruby hash so you can think of it like iterating over the keys in a hash. In the example below I've shown how to access the property and the value using this type of loop.</p>
+        <pre><code>
+          var person = {firstName: "Catie", lastName: "Stallings", age: 25}
+
+          for (var x in person) {
+            console.log("Property: " + x);
+            console.log("Value: " + person[x]);
+          }
+        </code></pre>
+        <pre><code>
+          Property: firstName
+          Value: Catie
+          Property: lastName
+          Value: Stallings
+          Property: age
+          Value: 25
+        </code></pre>
+      </li>
+      <li id="javascriptForOf">
+        <h3>For..of</h3>
+        <p>Similar to the for..in loop but the for..of loop iterates over the values of an iterable object, such as an array. If we had used a for..of loop in this next example, instead of returning the values in the array, it would have returned the index of the current value.</p>
+        <pre><code>
+          var numbers = [1, 2, 3, 4, 5]
+
+          for (var x of numbers) {
+            console.log("The value of x is: " + x);
+          }
+      </code></pre>
+      <pre><code>
+          The value of x is: 1
+          The value of x is: 2
+          The value of x is: 3
+          The value of x is: 4
+          The value of x is: 5
+      </code></pre>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>
