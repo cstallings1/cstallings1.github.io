@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DBC Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+</head>
+<body class="blog-post-body">
+  <header>
+    <nav>
+      <ul class="header-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+        <li><a target="_blank" href="../imgs/resume.pdf">Resume</a></li>
+      </ul>
+    </nav>
+    <div class="horizontal-bar"></div>
+  </header>
+  <section class="two-column">
+    <article class="col-1 blog-post">
+      <h1 class="main-header">Recursion</h1>
+      <!-- <h2 class="blog-subtitle"></h2> -->
+      <h3 class="date">January 8, 2016</h3>
+      <p>
+        Simply put, recursion is when a method calls itself until a certain goal is reached. It's used to break down a big problem into smaller subproblems, a divide and conquer algorithm. It can often achieve the same goal as looping, but instead calls itself repeatedly passing in a different argument each time. Recursion can be a little abstract so let's start with a simple example to show how it works. Finding the factorial of a number is a good example that should be pretty simple to understand. A factorial is the product of all positive numbers less than or equal to itself. So the factorial of 5 would be (1 x 2 x 3 x 4 x 5) = 120. I'll use Ruby to show a non-recursive solution:
+      </p>
+      <pre><code>
+        def factorial(n)
+          (1..n).inject{|product, n| product * n}
+        end
+
+        >> factorial(5)
+        120
+      </code></pre>
+      <p>
+        We used the inject method to create a container, then iterated through the range and multiplied the container by the next number until we got to 5 and returned the value of the container. This is pretty straightforward so let's go ahead and see what a recursive solution would look like. Instead of looping through each number in the range, we are going to call our factorial method repeatedly until n is less than or equal to 1 (the factorial of 0 and 1 is 1).
+      </p>
+      <pre><code>
+        def factorial(n)
+          if n <= 1
+            return 1
+          else
+            return n * factorial(n - 1)
+          end
+        end
+
+        >> factorial(5)
+        120
+      </code></pre>
+      <p>
+        We first define our base case: if n is less than or equal to 1, return 1. The next part is breaking down the problem. What we're really doing is taking our number (5) and multiplying it by itself less one (4). Then we take that product and multiply it by the next lowest number until we get to 1. The repetitive part is taken care of by calling our method inside itself and providing the value (n - 1) each time. Here's another way of illustrating what's going on:
+      </p>
+        <pre><code>
+          5 * factorial(4)  --> 5 * 24
+            4 * factorial(3) --> 4 * 6
+              3 * factorial(2) --> 3 * 2
+                2 * factorial(1) --> 2 * 1
+        </code></pre>
+        <p>
+        In reality it would probably make more sense to just use the inject method, but I think this is a good way of illustrating how recursion works. Recursion is not always the best way of solving a problem and you have to be careful of stack overflow - when your call stack runs out of memory and your program crashes. This is easy to do when you are repeatedly calling a method, so make sure your base case will eventually be reached.
+      </p>
+      <p>
+        Another way we could use recursion is to find the largest number in a dataset. One way to do it would be to evaluate each number and compare it to a variable initially set to 0. We then compare every number one at a time to that variable, if our current number is higher, we set the variable to our current number. Repeat until we're out of array elements. Here's a solution without recursion:
+      </p>
+      <pre><code>
+        def largest_num(array)
+          largest = 0
+          array.each{|n| largest = n if n > largest}
+          return largest
+        end
+
+        >> largest_num((1..100).to_a.shuffle)
+        100
+      </code></pre>
+      <p>We set our 'largest' variable to 0. Then we iterated over every number in our array and evaluated if it was greater than 'largest'. If it was, we set 'largest' to that number and continued until there were no elements in the array. The original dataset has 100 numbers so let's see how we could use the divide and conquer method and recursion to split this into smaller more manageable datasets.</p>
+      <pre><code>
+        def largest_num(array)
+          if array.length <= 2
+            num1 = array[0]
+            num2 = array[-1]
+          else
+            num1 = largest_num(array.slice!(0..array.length / 2))
+            num2 = largest_num(array)
+          end
+
+          if num1 > num2
+            return num1
+          else
+            return num2
+          end
+        end
+
+        >> largest_num((1..100).to_a.shuffle)
+        100
+      </code></pre>
+      <p>
+        Our base case: when there are two or less numbers in the array. At that point we jump to the last 'if' statment to compare the two numbers and return the largest one. But we passed in an array with 100 numbers, so we split that array in half and called our method on those halves. This is the recursive part where we 'divided and conquered' by splitting one large array into smaller arrays to compare. We kept doing this util we had just two numbers to compare. Again, this isn't a better solution than the one before it but I think it illustrates the divide and conquer algorithm better than the factorial example.
+      </p>
+      <p>
+        There is a time and a place to use recursion, and while you may not use it as often as you would loops and iterators, it's good to have an idea of what it is and how to use it. Coming up with a recursive solution for finding the factorial or fibonacci sequence of a number is a common interview question so it might pay off to take a little time to really understand this concept. When learning about recursion I found it helpful to watch videos because it is a little abstract. <span class="bold"><a href="https://vimeo.com/24716767">This video </a></span>by Joshua Cheek was really helpful to me so I'll go ahead an share it. That's all for now but I hope you now have a better idea of what recursion is.
+      </p>
+    </article>
+    <aside class="col-2">
+      <div class="aside-wrapper">
+        <img class="photo-self" src="../imgs/self.png" alt="Photo of Catie" />
+        <h2>Welcome.</h2>
+        <p>
+          Feel free to take a look around - you'll find the blog posts I've worked on during Dev Bootcamp.
+        </p>
+        <p>Enjoy!</p>
+      </div>
+    </aside>
+    </section>
+    <footer>
+      <div class="horizontal-bar"></div>
+      <ul class="footer-list" id="left-align-icons">
+        <li><a target="_blank" href="https://github.com/cstallings1"><img class="social-media-icon" src="../imgs/github_icon.png"></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/catie-stallings-22475828"><img class="social-media-icon" src="../imgs/linkedin_icon.png"></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/CatieHeberer"><img class="social-media-icon" src="../imgs/facebook_icon.png"></a></li>
+      </ul>
+    </footer>
+    </body>
+    </html>
