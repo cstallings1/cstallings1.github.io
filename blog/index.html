@@ -4,6 +4,7 @@
   <title>DBC Blog</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <script type="text/javascript" src="../javascript/blog.js"></script>
   <meta name="viewport" content="width=device-width" initial-scale="1">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
   <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
@@ -25,57 +26,14 @@
       </header>
       <section class="two-column">
         <article class="col-1">
-          <h1 class="main-header">Welcome To My Blog</h1>
-          <div class="title-column">
-            <ul>
-              <li>
-                <h2 class="blog-title"><a href="git.html">Benefits of Version Control</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="css-concepts.html">Display: inline vs inline-block</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="arrays-hashes.html">Comparing Arrays and Hashes</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="enumerable-methods.html">Using Enumerable#group_by</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="ruby-classes.html">An Overview of Ruby Classes</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="JavaScript.html">Objects in Ruby vs JavaScript</a></h2>
-              </li>
-              <li>
-                <h2 class="blog-title"><a href="tech.html">Recursion</a></h2>
-              </li>
-            </ul>
-          </div>
-          <div class="date-column">
-            <ul>
-              <li>
-                <p class="date">November 11, 2015</p>
-              </li>
-              <li>
-                <p class="date">November 27, 2015</p>
-              </li>
-              <li>
-                 <p class="date">December 2, 2015</p>
-              </li>
-              <li>
-                <p class="date">December 9, 2015</p>
-              </li>
-              <li>
-                <p class="date">December 16, 2015</p>
-              </li>
-              <li>
-                <p class="date">December 23, 2015</p>
-              </li>
-              <li>
-                <p class="date">January 8, 2016</p>
-              </li>
-            </ul>
-          </div>
+          <h1 class="main-header">Welcome to My Blog</h1>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="git.html">Benefits of Version Control</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="css-concepts.html">Display: inline vs inline-block</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="arrays-hashes.html">Comparing Arrays and Hashes</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="enumerable-methods.html">Using Enumerable#group_by</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="ruby-classes.html">An Overview of Ruby Classes</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="JavaScript.html">Objects in Ruby vs JavaScript</a></h2></div>
+          <div class="blocks" onmouseover="whiteFont()" onmouseout="greenFont()"><h2 class="blog-title"><a class="anchor" href="tech.html">Recursion</a></h2></div>
         </article>
         <aside class="col-2">
           <div class="aside-wrapper">
@@ -88,7 +46,7 @@
           </div>
         </aside>
       </section>
-      <footer class="blog-footer">
+      <footer>
         <div class="horizontal-bar"></div>
         <ul class="footer-list" id="left-align-icons">
           <li><a target="_blank" href="https://github.com/cstallings1"><img class="social-media-icon" src="../imgs/github_icon.png"></a></li>
