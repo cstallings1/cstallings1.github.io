@@ -123,6 +123,13 @@ background-color: white;
   margin-left: 10%;
   padding-top: 1.3%;
   position: fixed;
+  display: none;
+}
+
+.back-to-top:hover {
+  color: #172B36;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 @media(max-width: 858px) {
