@@ -1,14 +1,15 @@
-// var anchors = document.getElementsByClassName("anchor");
+$(document).ready(function() {
 
-// function whiteFont() {
-//   // this.lastChild.style.color = "white";
-//   for (var i = 0; i < anchors.length; i++) {
-//     anchors[i].style.color = "white";
-//   };
-// };
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $('.back-to-top').show();
+    } else {
+      $('.back-to-top').hide();
+    }
+  });
 
-// function greenFont() {
-//   for (var i = 0; i < anchors.length; i++) {
-//     anchors[i].style.color = "#172B36";
-//   };
-// };
+  $('.back-to-top').click(function() {
+    $('body').animate({scrollTop : 0});
+  });
+
+});
